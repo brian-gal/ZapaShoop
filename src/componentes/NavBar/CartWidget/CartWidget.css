@@ -1,0 +1,15 @@
+.cart-widget {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-widget span {
+    font-size: 20px;
+    color: #fff;
+}
+
+.cart-widget i {
+    font-size: 20px;
+    color: #fff;
+}

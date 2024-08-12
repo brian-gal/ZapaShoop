@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    /* Fondo negro */
+    padding: 10px 20px;
+    color: #fff;
+    /* Texto blanco */
+}
+
+.navbar-brand a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    /* Texto blanco */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    /* Texto blanco */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #f0f0f0;
+    /* Color al pasar el ratón */
+}
+
+.navbar-cart {
+    display: flex;
+    align-items: center;
+}
