@@ -2,11 +2,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-.cart-widget span {
-    font-size: 30px;
-    color: #fff;
+    text-decoration: none;
 }
 
 .cart-widget i {

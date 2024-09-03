@@ -24,16 +24,15 @@ const CartItem = ({ id }) => {
         <div className="cart-item">
             <img src={item.image} alt={item.title} className="cart-item-image" />
             <div className="cart-item-details">
-
                 <h3 className="cart-item-title">{item.title}</h3>
-                <p className="cart-item-price">Precio: ${item.price}</p>
+                <p className="cart-item-price">Precio c/u: ${item.price}</p>
                 <p className="cart-item-subtotal">Subtotal: ${item.price * item.quantity}</p>
             </div>
 
             <div className='cart-item-prod'>
                 <div className="cart-item-quantity-controls">
                     <button onClick={decrement} className="quantity-button">-</button>
-                    <p className="cart-item-quantity">Cantidad: {item.quantity}</p>
+                    <p className="cart-item-quantity">{item.quantity}</p>
                     <button onClick={increment} className="quantity-button">+</button>
                 </div>
                 <button
