@@ -1,0 +1,108 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #1c1c1c;
+    /* Fondo oscuro */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.cart-item-prod {
+    display: flex;
+    gap: 30px;
+}
+
+.cart-item-image {
+    width: 100px;
+    /* Ajusta el tamaño de la imagen */
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.cart-item-details {
+    flex-grow: 2;
+    /* Ocupa más espacio disponible */
+    color: #ffffff;
+    /* Texto blanco */
+    margin-right: 20px;
+}
+
+.cart-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+    /* Color del título */
+    white-space: nowrap;
+    /* Evita que el texto se corte */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Agrega puntos suspensivos si el texto es demasiado largo */
+}
+
+.cart-item-price {
+    font-size: 16px;
+    color: #b3b3b3;
+    justify-content: space-between;
+}
+
+.cart-item-quantity-controls {
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    /* Fondo oscuro */
+    border-radius: 4px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.quantity-button {
+    background-color: #1c1c1c;
+    /* Botón oscuro */
+    color: #ffffff;
+    /* Texto blanco en el botón */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-button:hover {
+    background-color: #555555;
+    /* Cambia el color al pasar el mouse */
+}
+
+.cart-item-quantity {
+    margin: 0 10px;
+    color: #ffffff;
+    /* Texto blanco */
+}
+
+.cart-item-subtotal {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ff00;
+    /* Verde para el subtotal */
+    margin-right: 20px;
+}
+
+.cart-item-remove-button {
+    background-color: transparent;
+    color: #ff0000;
+    /* Texto rojo */
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 20px;
+}
+
+.cart-item-remove-button:hover {
+    color: #ff4d4d;
+    /* Más claro al pasar el mouse */
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+}
