@@ -1,30 +1,38 @@
-import "./ItemDetailContainer.css"
-import { getProductsId } from "../../data/data.js";
+import "./ItemDetailContainer.css";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
 import { useParams } from "react-router-dom";
-
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../services/firebaseConfig.js";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
-
-    const { itemId } = useParams()
+    const [product, setProduct] = useState(null);
+    const { itemId } = useParams();
 
     useEffect(() => {
-        getProductsId(itemId)
-            .then(response => {
-                setProduct(response)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }, [itemId])
+        const fetchProduct = async () => {
+            try {
+                const productDoc = doc(db, "products", itemId);
+                const productSnapshot = await getDoc(productDoc);
+
+                if (productSnapshot.exists()) {
+                    setProduct({ id: productSnapshot.id, ...productSnapshot.data() });
+                } else {
+                    console.error("No product found with the given ID");
+                }
+            } catch (error) {
+                console.error("Error fetching product:", error);
+            }
+        };
+
+        fetchProduct();
+    }, [itemId]);
 
     return (
         <div className="ItemDetailContainer">
-            <ItemDetail {...product} />
+            {product ? <ItemDetail {...product} /> : <p>Cargando...</p>}
         </div>
-    )
-}
+    );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

@@ -1,11 +1,25 @@
 .cart-widget {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #0f0f0e; /* Fondo a juego con la barra de navegación */
+    color: #ffcc00; /* Color de acento para el texto y el ícono */
+    border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-widget:hover {
+    background-color: #1a1a1a; /* Fondo un poco más claro al hacer hover */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
 .cart-widget i {
-    font-size: 30px;
-    color: #fff;
+    font-size: 24px;
+}
+
+.cart-widget span {
+    font-size: 16px;
+    font-weight: bold;
 }

@@ -29,29 +29,31 @@ const ItemDetail = ({ id, title, image, price, count, description, category }) =
 
     return (
         <article className="cardItemDetail">
-            <section>
-                <h2 className="ItemHeader">
-                    {title}
-                </h2>
-            </section>
             <picture>
                 <img src={image} alt={title} />
             </picture>
-            <section className="info-section">
-                <p className="category">Stock: {count}</p>
-                <p className="info">Descripción: {description}</p>
-                <p className="price">Precio: ${price}</p>
-            </section>
-            <section>
-                {isInCart ? (
-                    <div>
-                        <p>Producto ya está en el carrito</p>
-                        <Link to="/cart" className="go-to-cart-link">Ir al carrito</Link>
-                    </div>
-                ) : (
-                    <ItemCount inicial={1} stock={count} onAdd={handleOnAdd} />
-                )}
-            </section>
+            <div>
+                <section>
+                    <h2 className="ItemHeader">
+                        {title}
+                    </h2>
+                </section>
+                <section className="info-section">
+                    <p className="price">Precio: ${price}</p>
+                    <p className="info">Descripción: {description}</p>
+                    <p className="category">Stock: {count}</p>
+                </section>
+                <section>
+                    {isInCart ? (
+                        <div className="contenedor-cart">
+                            <p>Producto ya fue agregado al carrito</p>
+                            <Link to="/cart" className="go-to-cart-link">Ir al carrito</Link>
+                        </div>
+                    ) : (
+                        <ItemCount inicial={1} stock={count} onAdd={handleOnAdd} />
+                    )}
+                </section>
+            </div>
         </article>
     )
 }
