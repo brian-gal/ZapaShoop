@@ -12,7 +12,13 @@ const Item = ({ id, title, image, price, count }) => {
             </h2>
             <div>
                 <p className="price">Precio: {price}</p>
-                <p className="stock">Stock: {count}</p>
+                <p className="stock">
+                    {count === 0
+                        ? 'Sin stock'
+                        : count === 1
+                            ? 'Último disponible'
+                            : `Stock: ${count}`}
+                </p>
             </div>
             <section>
                 <Link to={`/item/${id}`} className="details-button">Ver detalles</Link>

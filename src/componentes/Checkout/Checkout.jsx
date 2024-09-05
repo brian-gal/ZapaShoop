@@ -30,11 +30,9 @@ const Checkout = () => {
                 clearCart();
             } else {
                 console.error('Hay productos que están fuera de stock');
-                alert('Algunos productos están fuera de stock');
             }
         } catch (error) {
             console.log(error);
-            alert('Hubo un error al procesar la compra. Por favor, inténtelo nuevamente.');
         }
     }
 
@@ -44,22 +42,23 @@ const Checkout = () => {
         const productsRef = collection(db, 'products');
         const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)));
         const { docs } = productsAddedFromFirestore;
-
+    
         docs.forEach(doc => {
             const dataDoc = doc.data();
-            const stockDb = dataDoc.stock;
+            const stockDb = parseInt(dataDoc.count);  
             const productAddedToCart = cart.find(prod => prod.id === doc.id);
             const prodQuantity = productAddedToCart?.quantity;
-
+    
             if (stockDb >= prodQuantity) {
-                batch.update(doc.ref, { stock: stockDb - prodQuantity });
+                batch.update(doc.ref, { count: stockDb - prodQuantity });
             } else {
                 outOfStock.push({ id: doc.id, ...dataDoc });
             }
         });
-
+    
         return outOfStock;
-    }
+    };
+    
 
     if (orderId) {
         return <h1>Gracias por su compra. El ID de su orden es: {orderId}</h1>

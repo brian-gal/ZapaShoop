@@ -50,7 +50,12 @@ const ItemDetail = ({ id, title, image, price, count, description, category }) =
                             <Link to="/cart" className="go-to-cart-link">Ir al carrito</Link>
                         </div>
                     ) : (
-                        <ItemCount inicial={1} stock={count} onAdd={handleOnAdd} />
+                        count === 0 ?
+                            <>
+                                <p> Lo sentimos, este producto está agotado. </p>
+                                <Link to='/' className='linkProd'>Descubrir productos</Link>
+                            </>
+                            : <ItemCount inicial={1} stock={count} onAdd={handleOnAdd} />
                     )}
                 </section>
             </div>

@@ -42,9 +42,6 @@ const CartItem = ({ id }) => {
                     <i className="bi bi-trash"></i>
                 </button>
             </div>
-
-
-
         </div>
     );
 };

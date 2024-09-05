@@ -1,8 +1,7 @@
 .Container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    height: fit-content;
     background-color: #1a1a1a;
     /* Fondo oscuro */
     padding: 20px;
