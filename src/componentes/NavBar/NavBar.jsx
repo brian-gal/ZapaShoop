@@ -33,11 +33,8 @@ const NavBar = () => {
 
     return (
         <nav className="navbar">
-            <div className="navbar-brand">
-                <p>ZapaShop</p>
-            </div>
+            <NavLink to="/" className="navbar-brand"><p>CeluShop</p></NavLink>
             <ul className="navbar-links">
-                <NavLink to="/">Inicio</NavLink>
                 {categorias.map((categoria, index) => (
                     <NavLink key={index} to={`/category/${categoria}`}>
                         {categoria}

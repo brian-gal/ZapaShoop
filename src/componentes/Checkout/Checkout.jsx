@@ -4,6 +4,7 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm.jsx";
 
 import { db } from "../../services/firebaseConfig.js";
 import { Timestamp, writeBatch, addDoc, getDocs, collection, query, where, documentId } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
     const [orderId, setOrderId] = useState("")
@@ -42,26 +43,29 @@ const Checkout = () => {
         const productsRef = collection(db, 'products');
         const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)));
         const { docs } = productsAddedFromFirestore;
-    
+
         docs.forEach(doc => {
             const dataDoc = doc.data();
-            const stockDb = parseInt(dataDoc.count);  
+            const stockDb = parseInt(dataDoc.count);
             const productAddedToCart = cart.find(prod => prod.id === doc.id);
             const prodQuantity = productAddedToCart?.quantity;
-    
+
             if (stockDb >= prodQuantity) {
                 batch.update(doc.ref, { count: stockDb - prodQuantity });
             } else {
                 outOfStock.push({ id: doc.id, ...dataDoc });
             }
         });
-    
+
         return outOfStock;
     };
-    
+
 
     if (orderId) {
-        return <h1>Gracias por su compra. El ID de su orden es: {orderId}</h1>
+        return <div className="compraId">
+            <h1>Gracias por su compra. El ID de su orden es: {orderId}</h1>
+            <p>Continue navegando para descubrir mas productos</p>
+            <Link to='/' className='linkProd'>Descubrir productos</Link></div>
     }
 
     return (

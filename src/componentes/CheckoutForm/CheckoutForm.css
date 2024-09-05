@@ -72,3 +72,7 @@
     outline: none;
     box-shadow: 0 0 5px 2px rgba(255, 204, 0, 0.7);
 }
+
+.compraId {
+    text-align: center;
+}
