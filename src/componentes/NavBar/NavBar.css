@@ -1,42 +1,18 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #0f0f0e;
-    /* Fondo oscuro */
-    border-bottom: 2px solid #333333;
-}
-
 .navbar-brand {
     font-size: 24px;
     font-weight: bold;
-    color: #ffcc00;
-    /* Color de acento */
     text-decoration: none;
 }
 
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar-links a {
-    color: #f5f5f5;
-    /* Texto claro para contraste */
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.navbar-links a:hover {
+.act {
     color: #ffcc00;
-    /* Color de acento al hacer hover */
 }
 
-.navbar-links .active {
+.navbar-brand:focus, .navbar-brand:hover {
     color: #ffcc00;
-    /* Color de acento para el enlace activo */
-    font-weight: bold;
 }
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #ffcc00;
+}
+

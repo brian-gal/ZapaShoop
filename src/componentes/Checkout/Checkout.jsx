@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import './Checkout.css'
 import { CartContext } from "../../context/CartContext.jsx";
 import CheckoutForm from "../CheckoutForm/CheckoutForm.jsx";
 

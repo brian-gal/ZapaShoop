@@ -6,6 +6,7 @@ Este es un proyecto de una tienda de celulares desarrollado con **React**. El ob
 
 - **React**: Se utilizó para crear una interfaz de usuario dinámica y modular.
 - **Firebase**: Se empleó para gestionar la base de datos, incluyendo la lista de productos y los datos de las órdenes.
+- **Bootstrap**: Se usó para estilizar y hacer el diseño responsive.
 - **Vercel**: La aplicación está desplegada en Vercel, lo que facilita el acceso y la visualización en línea.
 
 ## Características
@@ -14,9 +15,10 @@ Este es un proyecto de una tienda de celulares desarrollado con **React**. El ob
 - Detalles de cada producto con imágenes y especificaciones.
 - Funcionalidad de carrito de compras.
 - Integración con Firebase para actualizar el stock de productos una vez comprados.
+- Diseño responsive.
 
 ## Enlace del Proyecto
 
 Puedes ver el proyecto en funcionamiento en el siguiente enlace:
 
-- https://coder-ecommerce-react-git-main-brians-projects-b582f056.vercel.app/
+- [Ver Proyecto](https://coder-ecommerce-react-git-main-brians-projects-b582f056.vercel.app/)
