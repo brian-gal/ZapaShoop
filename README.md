@@ -21,4 +21,4 @@ Este es un proyecto de una tienda de celulares desarrollado con **React**. El ob
 
 Puedes ver el proyecto en funcionamiento en el siguiente enlace:
 
-- [Ver Proyecto](https://coder-ecommerce-react-git-main-brians-projects-b582f056.vercel.app/)
+- [Ver Proyecto](https://celu-shop.vercel.app/)
