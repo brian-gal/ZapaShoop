@@ -4,8 +4,6 @@ import { CartContext } from "../../context/CartContext.jsx";
 import CartItem from "../CartItem/CartItem";
 import './cart.css';
 
-
-
 const Cart = () => {
     const { cart, clearCart, totalQuantity } = useContext(CartContext)
 

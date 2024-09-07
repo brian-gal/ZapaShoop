@@ -39,7 +39,7 @@ const ItemListContainer = () => {
 
     return (
         <div className='ItemListContainer'>
-            <Cover products={products} />
+            <Cover />
             {loading ? (
                 <p className='cargando'>Cargando...</p> // Mostrar mensaje de "Cargando" mientras `loading` es true
             ) : (

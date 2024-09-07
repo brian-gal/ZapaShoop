@@ -4,15 +4,14 @@
     gap: 8px;
     padding: 8px 12px;
     background-color: #2b3035;
-    color: #ffffff; 
+    color: #ffffff;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .cart-widget:hover {
-    background-color: #1a1a1a; 
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .cart-widget i {
