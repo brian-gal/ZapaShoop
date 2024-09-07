@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './ItemListContainer.css';
 import ItemList from "../ItemList/ItemList.jsx";
+import Cover from "../cover/cover.jsx";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../services/firebaseConfig.js";
@@ -35,6 +36,7 @@ const ItemListContainer = () => {
 
     return (
         <div className='ItemListContainer'>
+            <Cover products={products} />
             <ItemList products={products} />
         </div>
     );
