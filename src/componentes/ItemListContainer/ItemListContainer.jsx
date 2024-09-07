@@ -8,6 +8,7 @@ import { db } from "../../services/firebaseConfig.js";
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true); // Nuevo estado para manejar la carga
     const { categoryId } = useParams();
 
     useEffect(() => {
@@ -26,8 +27,10 @@ const ItemListContainer = () => {
                 const productsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
                 setProducts(productsList);
+                setLoading(false); // Cambiar a false cuando los productos se han cargado
             } catch (error) {
                 console.error("Error fetching products: ", error);
+                setLoading(false); // También cambiar a false en caso de error
             }
         };
 
@@ -37,7 +40,11 @@ const ItemListContainer = () => {
     return (
         <div className='ItemListContainer'>
             <Cover products={products} />
-            <ItemList products={products} />
+            {loading ? (
+                <p className='cargando'>Cargando...</p> // Mostrar mensaje de "Cargando" mientras `loading` es true
+            ) : (
+                <ItemList products={products} />
+            )}
         </div>
     );
 };

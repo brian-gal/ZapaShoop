@@ -3,3 +3,10 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.cargando {
+    color: #ffff;
+    text-align: center;
+    margin: 30px;
+    font-size: 30px;
+}
